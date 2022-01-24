@@ -107,18 +107,18 @@ Script ini membutuhkan file zip dari submission setiap kelas. Didapatkan dengan 
 
 1. Buka submission slot yang bersangkutan dan klik view all submission
 
-   ![image-20220124143123353](.\docs\image-20220124143123353.png)
+   ![image-20220124143123353](docs/image-20220124143123353.png)
 
 2. Buka dropdown `Grading action` dan pilih download all submissions.
 
-   ![image-20220124143244678](.\docs\image-20220124143244678.png)
+   ![image-20220124143244678](docs/image-20220124143244678.png)
 
 3. Sudah deh. 
    File tersebut adalah zip of zip yang anda butuhkan untuk menjalankan script. 
 
 4. Kalau menjalankan untuk satu angkatan, disarankan untuk meminta file setiap kelas dari asdos masing-masing kelas. Simpan semua file tersebut di folder yang sama, lalu jalankan script. Contoh: 
 
-   ![image-20220124144037000](.\docs\image-20220124144037000.png)
+   ![image-20220124144037000](docs/image-20220124144037000.png)
 
 ---
 
