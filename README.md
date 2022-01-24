@@ -4,9 +4,9 @@
 
 1. [Instalasi](#Instalasi)
 2. [Registrasi](#Registrasi)
-3. [Persiapan Script](#Persiapan Script)
-4. [Menggunakan Script](#Menggunakan Script)
-5. [File yang Dibutuhkan](#File yang Dibutuhkan) (zip of zips)
+3. [Persiapan Script](#"Persiapan-Script")
+4. [Menggunakan Script](#"Menggunakan-Script")
+5. [File yang Dibutuhkan](#"File-yang-Dibutuhkan") (zip of zips)
 
 ## Instalasi 
 Instalasi dapat dilakukan dengan *package installer* untuk Python (``pip``). Paste *command line* berikut di terminal favorit anda:
