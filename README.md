@@ -67,6 +67,7 @@ Berikut beberapa hal yang perlu diubah atau diisi:
 
 ## Menggunakan Script
 
+### `moss_tp.py`
 Untuk melakukan pengecekan, jalankan *command line* ini:
 
 ```
@@ -101,6 +102,26 @@ Halaman akan menampilkan pasangan *submission* yang terindikasi plagiat. Anda da
 
 Langkah berikutnya yang anda lakukan adalan mengkomunikasikan hasil tersebut pada tim dosen untuk ditindaklanjuti. 
 
+### `scrape_report.sh`
+
+Karena link Moss hanya valid selama 3 hari, dapat dilakukan scraping untuk menyimpan HTML hasil laporan di device lokal. Untuk itu, dapat digunakan script `scrape_report.sh` dengan langkah-langkah seperti berikut
+
+1. Lakukan `source scrape_report.sh`
+
+2. Panggil commandnya dengan `scrape_report <url>`.
+   Contoh bentuk pemanggilannya dengan URLnya adalah sebagai berikut:
+      
+      ```
+      scrape_report http://moss.stanford.edu/results/6/9408393705181/
+      ```
+   Penting untuk diperhatikan bahwa pada link terdapat **protokol** pada awal dan **forward slash** pada akhir URL.
+   
+3. Hasil akan disimpan dalam folder yang terstruktur sesuai link di atas, dalam `moss.stanford.edu/<angka>/<id>/`.
+   
+Disarankan untuk menjalankan scraping hasil Moss tertentu dalam _directory_ yang berbeda, sebab `wget` dapat tidak sengaja meng-_overwrite_ file pada report yang sudah ada.
+
+**Catatan**: Script scraper membutuhkan utility berikut dalam sistem Anda: `bash`, `wget`, `find` dan `sed`. Jika Anda menggunakan Windows dan bisa menulis versi script untuk PowerShell/batch/dll., sangat dipersilahkan untuk men-_submit_ sebuah pull request untuk versi Windows agar bisa digunakan lebih banyak asdos lainnya.
+
 ## File yang Dibutuhkan
 
 Script ini membutuhkan file zip dari submission setiap kelas. Didapatkan dengan mudah via scele dengan langkah sebagai berikut. 
@@ -120,22 +141,6 @@ Script ini membutuhkan file zip dari submission setiap kelas. Didapatkan dengan 
 
    ![image-20220124144037000](docs/image-20220124144037000.png)
 
-5. (Opsional) Karena link Moss hanya valid selama 3 hari, dapat dilakukan scraping untuk menyimpan HTML hasil laporan di device lokal. Untuk itu, dapat digunakan script `scrape_report.sh` dengan langkah-langkah seperti berikut
-   a. Lakukan `source scrape_report.sh`
-   b. Panggil commandnya dengan `scrape_report <url>`.
-   Contoh bentuk pemanggilannya dengan URLnya adalah seperti berikut:
-
-      ```bash
-      scrape_report http://moss.stanford.edu/results/6/9408393705181/
-      ```
-      Penting untuk diperhatikan bahwa pada link terdapat _protocol_ pada awal dan _forward slash_ pada akhir URL.
-   c. Hasil akan disimpan dalam folder yang terstruktur sesuai link di atas, dalam `moss.stanford.edu/<angka>/<id>/`.
-   
-   Disarankan tiap download untuk TP tertentu dilakukan dalam folder berbeda agar `wget` tidak secara tidak sengaja meng-_overwrite_ file pada hasil report TP lain dan agar tiap download dapat dilakukan secara paralel.
-   
-   **Catatan**: Script scraper membutuhkan utility berikut di sistem Anda: `bash`, `wget`, `find` dan `sed`.
-   
-   Jika Anda menggunakan Windows dan bisa menulis versi script untuk PowerShell/batch/dll., sangat dipersilahkan untuk men-_submit_ sebuah pull request untuk versi Windows agar bisa digunakan lebih banyak asdos lainnya.
 
 ---
 
