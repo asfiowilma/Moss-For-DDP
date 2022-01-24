@@ -120,6 +120,23 @@ Script ini membutuhkan file zip dari submission setiap kelas. Didapatkan dengan 
 
    ![image-20220124144037000](docs/image-20220124144037000.png)
 
+5. (Opsional) Karena link Moss hanya valid selama 3 hari, dapat dilakukan scraping untuk menyimpan HTML hasil laporan di device lokal. Untuk itu, dapat digunakan script `scrape_report.sh` dengan langkah-langkah seperti berikut
+   a. Lakukan `source scrape_report.sh`
+   b. Panggil commandnya dengan `scrape_report <url>`.
+   Contoh bentuk pemanggilannya dengan URLnya adalah seperti berikut:
+
+      ```bash
+      scrape_report http://moss.stanford.edu/results/6/9408393705181/
+      ```
+      Penting untuk diperhatikan bahwa pada link terdapat _protocol_ pada awal dan _forward slash_ pada akhir URL.
+   c. Hasil akan disimpan dalam folder yang terstruktur sesuai link di atas, dalam `moss.stanford.edu/<angka>/<id>/`.
+   
+   Disarankan tiap download untuk TP tertentu dilakukan dalam folder berbeda agar `wget` tidak secara tidak sengaja meng-_overwrite_ file pada hasil report TP lain dan agar tiap download dapat dilakukan secara paralel.
+   
+   **Catatan**: Script scraper membutuhkan utility berikut di sistem Anda: `bash`, `wget`, `find` dan `sed`.
+   
+   Jika Anda menggunakan Windows dan bisa menulis versi script untuk PowerShell/batch/dll., sangat dipersilahkan untuk men-_submit_ sebuah pull request untuk versi Windows agar bisa digunakan lebih banyak asdos lainnya.
+
 ---
 
 Semoga script ini bisa meringankan sakit kepala anda. 
